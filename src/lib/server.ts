@@ -68,7 +68,7 @@ export async function listen(app: Express, port: number) {
       } else {
         resolve();
       }
-    })
+    });
   });
 }
 

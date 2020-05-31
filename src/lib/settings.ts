@@ -8,7 +8,7 @@ export function getSettings() {
     oidc: {
       clientId: {
         doc: "OIDC Client ID",
-        default: "debug",
+        default: "test",
         format: String,
         arg: "oidc-client-id",
         env: "OIDC_CLIENT_ID",

@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "env-cmd node-dev -r ts-node/register src/index.ts",
     "debug": "env-cmd node-dev -r ts-node/register --inspect src/index.ts",
-    "build": "tsc -b"
+    "build": "tsc -b",
+    "docker-build": "docker build -t $(jq -r '. | \"erdii/\\(.name):\\(.version)\"' package.json) .",
+    "docker-push": "docker push $(jq -r '. | \"erdii/\\(.name):\\(.version)\"' package.json)"
   },
   "keywords": [],
   "author": "erdii",

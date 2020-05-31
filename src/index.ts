@@ -56,6 +56,12 @@ async function main() {
   });
 
   await Server.listen(app, settings.port);
+
+  process.on("SIGINT", () => {
+    console.error("Exiting because of SIGINT...");
+    process.exit(0);
+  });
+
   console.log(`Server listening on ${settings.port}`);
 }
 
